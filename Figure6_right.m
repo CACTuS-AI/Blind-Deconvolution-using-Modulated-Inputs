@@ -136,4 +136,4 @@ for IT = 1:1:it
 end
 ehP = sum(ehP,2)/J;
 % figure;
-plot(ratio,ehP), xlabel('Oversampling: L/(N*(K+M))'), ylabel('Relative error');
+semilogy(ratio,ehP), xlabel('Oversampling: L/(N*(K+M))'), ylabel('Relative error');

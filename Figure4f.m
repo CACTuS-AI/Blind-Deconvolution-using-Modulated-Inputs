@@ -10,7 +10,7 @@ J = 10; % Number of frames
 it = 80;
 success_freq = zeros(it/2,15);
 for N = 1:1:15 % number of signals 
-    ehP = zeros(it,J);
+    ehP = zeros(it/2,J);
     for IT = 2:2:it
         K = IT; % length of signal expansion coefficents
         Q = 1.5*K; % length of signals
@@ -126,9 +126,9 @@ for N = 1:1:15 % number of signals
             mmF = transpose(concat1d(cellfun(@transpose,mm,'UniformOutput',false),N,K)); 
             ehm1 = norm(abs(hh*mmF'/norm(hh*mmF','fro'))-abs(h*mF'/norm(h*mF','fro')),'fro');
             if ehm1 <= 0.001
-               ehP(IT,num) = ehP(IT,num) + 1;
+               ehP(IT/2,num) = ehP(IT/2,num) + 1;
             else
-               ehP(IT,num) = ehP(IT,num) + 0;
+               ehP(IT/2,num) = ehP(IT/2,num) + 0;
             end
         end
     end

@@ -11,11 +11,11 @@ K = 200; % length of signal expansion coefficents
 Q = 2400; %length of signals
 L = 2400; % length of ffts L >= max(Q,M)
 J = 100; % Number of frames
-it = 8;
+it = 9;
 ehP = zeros(it,J);
 SNR = zeros(it,J);
 for IT = 1:1:it
-        scaling = [150 70 20 10 5 1 0.5 0.1];
+        scaling = [150 70 20 10 5 1 0.5 0.1 0.01];
             noise = randn(L,1);
             noise = scaling(IT)*noise/norm(noise);
         for num = 1:J
@@ -141,4 +141,4 @@ end
 ehP = sum(ehP,2)/J;
 SNR_log = 10*log10(sum(SNR,2)/J);
 % figure;
-plot(SNR_log,ehP), xlabel('SNR (dB)'), ylabel('Relative  error (dB)');
+semilogy(SNR_log,ehP), xlabel('SNR (dB)'), ylabel('Relative  error (dB)');
