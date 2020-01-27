@@ -24,10 +24,10 @@ We provide the Matlab scripts that generate the figures, as well as a test file 
   - Requires: adjcA1d.m
   - Requires: concat1d.m
   
-- Script to generate Figures5 (image deblurring): deblur.m???
+- Script to generate Figures5 (image deblurring): Figure5.m
   - Requires: Noiselet Toolbox
-  - Requires: ?????
-  - Image data: ?????
+  - Requires: adjcA2d.m
+  - Image data: concat2d.m
 
 - Script to generate Figure 6  (recovery in the presence of noise): Figure6_left.m
   - Requires: Noiselet Toolbox
